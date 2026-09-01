@@ -1,0 +1,84 @@
+ /* =========================
+     All components variables used
+  ========================= */
+:root {
+  /* ============ Neutral Colors=========== */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+
+  /* ==============Red Colors============= */
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  /* ===========Gradients================= */
+  --light-gradient: linear-gradient(
+    180deg,
+    #EBF2FC 0%,
+    #EEF8F9 100%
+  );
+
+  --dark-gradient: linear-gradient(
+    180deg,
+    #040918 0%,
+    #091540 100%
+  );
+
+  /* ============Typography================== */
+  --font-family: "Noto Sans", sans-serif;
+  --font-size: 16px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+
+/* =========================
+   Global Reset
+========================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: Arial, sans-serif; */
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
