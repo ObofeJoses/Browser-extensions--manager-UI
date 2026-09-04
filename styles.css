@@ -262,6 +262,11 @@ input:checked + .slider::before {
   main {
     padding: 2rem;
   }
+  div.filter-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .extensions-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
