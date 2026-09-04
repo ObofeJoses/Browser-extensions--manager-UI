@@ -198,9 +198,9 @@ h1{
     padding: 4px 8px;
     cursor: pointer;
     border-radius: 16px;
-    border: 1px solid var(--red-400);
-    background-color: inherit;
-    color: inherit;
+    border: 1px solid var(--neutral-600);
+    background-color: transparent;
+    color: var(--neutral-100);
 }
 
 
@@ -278,4 +278,110 @@ input:checked + .slider::before {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
+}
+
+/* =========================
+   Interactive States
+========================= */
+
+/* Filter buttons */
+.tablinks {
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.1s ease;
+}
+
+.tablinks:hover {
+  background-color: var(--neutral-700);
+  color: var(--neutral-0);
+}
+
+.tablinks:focus-visible {
+  outline: 2px solid var(--red-400);
+  outline-offset: 2px;
+}
+
+.tablinks:active {
+  transform: scale(0.97);
+}
+
+.active-tab:hover {
+  background-color: var(--red-400);
+}
+
+
+/* Remove button */
+.remove-btn {
+  background-color: transparent;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              border-color 0.2s ease,
+              transform 0.1s ease;
+}
+
+.remove-btn:hover {
+  background-color: var(--red-500);
+  border-color: var(--red-500);
+  color: var(--neutral-900);
+}
+
+.remove-btn:focus-visible {
+  outline: 2px solid var(--red-400);
+  outline-offset: 2px;
+}
+
+.remove-btn:active {
+  transform: scale(0.97);
+}
+
+
+/* Theme button */
+.theme-switch {
+  transition: background-color 0.2s ease,
+              transform 0.1s ease;
+}
+
+.theme-switch:hover {
+  background-color: var(--neutral-700);
+}
+
+.theme-switch:focus-visible {
+  outline: 2px solid var(--red-400);
+  outline-offset: 2px;
+}
+
+.theme-switch:active {
+  transform: scale(0.95);
+}
+
+
+/* Toggle */
+.slider {
+  transition: background-color 0.2s ease;
+}
+
+.slider:hover {
+  background-color: var(--neutral-300);
+}
+
+input:checked + .slider:hover {
+  background-color: var(--red-400);
+}
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid var(--red-400);
+  outline-offset: 2px;
+}
+
+
+/* Extension cards */
+.extension {
+  border: 1px solid transparent;
+  transition: transform 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.extension:hover {
+  border-color: var(--neutral-600);
+  transform: translateY(-2px);
 }
