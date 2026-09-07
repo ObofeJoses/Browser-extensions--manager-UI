@@ -1,5 +1,4 @@
-//remove button functionality
-
+// JavaScript is connected
 console.log("JavaScript is connected!");
 
 const filterButtons = document.querySelectorAll(".tablinks");
@@ -11,6 +10,32 @@ console.log(extensions);
 console.log(removeButtons);
 
 
+// Keep track of the current filter
+
+let currentFilter = "all";
+
+
+// Filter functionality
+
+function filterExtensions(filter) {
+  extensions.forEach((card) => {
+    const isActive = card.querySelector(".switch input").checked;
+
+    if (
+      filter === "all" ||
+      (filter === "active" && isActive) ||
+      (filter === "inactive" && !isActive)
+    ) {
+      card.style.display = "grid";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+
+// Remove button functionality
+
 removeButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     const card = button.closest(".extension");
@@ -20,7 +45,8 @@ removeButtons.forEach(function (button) {
 });
 
 
-//This script is for the toggle switch functionality
+// Toggle switch functionality
+
 const toggleInputs = document.querySelectorAll(".switch input");
 
 toggleInputs.forEach((checkbox) => {
@@ -35,28 +61,6 @@ toggleInputs.forEach((checkbox) => {
   });
 });
 
-// Keep track of the current filter
-
-let currentFilter = "all";
-
-
-// Filter functionality
-
-function filterExtensions(filter) {
- document.querySelectorAll(".extension").forEach((card) => {
-    const isActive = card.querySelector(".switch input").checked;
-
-    if (
-      filter === "all" ||
-      (filter === "active" && isActive) ||
-      (filter === "inactive" && !isActive)
-    ) {
-      card.style.display = "grid";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
 
 // Filter button functionality
 
