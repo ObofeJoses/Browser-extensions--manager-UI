@@ -57,3 +57,19 @@ function filterExtensions(filter) {
     }
   });
 }
+
+// Filter button functionality
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach((btn) => {
+      btn.classList.remove("active-tab");
+    });
+
+    button.classList.add("active-tab");
+
+    currentFilter = button.dataset.filter;
+
+    filterExtensions(currentFilter);
+  });
+});
