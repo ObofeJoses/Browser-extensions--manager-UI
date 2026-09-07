@@ -2,11 +2,11 @@
 console.log("JavaScript is connected!");
 
 const filterButtons = document.querySelectorAll(".tablinks");
-const extensions = document.querySelectorAll(".extension");
+// const extensions = document.querySelectorAll(".extension");
 const removeButtons = document.querySelectorAll(".remove-btn");
 
 console.log(filterButtons);
-console.log(extensions);
+// console.log(extensions);
 console.log(removeButtons);
 
 
@@ -18,6 +18,7 @@ let currentFilter = "all";
 // Filter functionality
 
 function filterExtensions(filter) {
+  const extensions = document.querySelectorAll(".extension");
   extensions.forEach((card) => {
     const isActive = card.querySelector(".switch input").checked;
 
@@ -76,4 +77,27 @@ filterButtons.forEach((button) => {
 
     filterExtensions(currentFilter);
   });
+});
+
+// Theme switching
+
+const themeSwitch = document.querySelector(".theme-switch");
+const themeIcon = themeSwitch.querySelector("img");
+
+themeSwitch.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark-theme");
+
+  if (document.body.classList.contains("dark-theme")) {
+
+    themeIcon.src = "./assets/images/icon-moon.svg";
+    themeIcon.alt = "Moon Icon";
+
+  } else {
+
+    themeIcon.src = "./assets/images/icon-sun.svg";
+    themeIcon.alt = "Sun Icon";
+
+  }
+
 });
