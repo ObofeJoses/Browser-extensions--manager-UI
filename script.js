@@ -43,7 +43,7 @@ let currentFilter = "all";
 // Filter functionality
 
 function filterExtensions(filter) {
-  extensions.forEach((card) => {
+ document.querySelectorAll(".extension").forEach((card) => {
     const isActive = card.querySelector(".switch input").checked;
 
     if (
