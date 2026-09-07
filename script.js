@@ -30,5 +30,30 @@ toggleInputs.forEach((checkbox) => {
     } else {
       console.log("Extension is Inactive");
     }
+
+    filterExtensions(currentFilter);
   });
 });
+
+// Keep track of the current filter
+
+let currentFilter = "all";
+
+
+// Filter functionality
+
+function filterExtensions(filter) {
+  extensions.forEach((card) => {
+    const isActive = card.querySelector(".switch input").checked;
+
+    if (
+      filter === "all" ||
+      (filter === "active" && isActive) ||
+      (filter === "inactive" && !isActive)
+    ) {
+      card.style.display = "grid";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
